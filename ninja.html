@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Ninja</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var htmlString = "";
+        for (var i = 0; i < 4; i++) {
+            htmlString += '<img src="assets/img/book1.jpg" alt="ninja">';
+        }
+        console.log(htmlString);
+
+        $('document').ready(function () {
+
+            $('div').append(htmlString);
+
+            $('img').click(function (e) {
+                e.preventDefault();
+                $(this).hide("slow");
+            })
+            $('.restore').click(function (e) {
+                e.preventDefault();
+                $('img').show();
+            })
+        });
+    </script>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="row">
+
+    </div>
+    <div id="row">
+
+    </div>
+    <button class="restore">Restore</button>
+</body>
+
+</html>
